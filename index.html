@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home — KIN1</title>
+  <meta name="description" content="KIN1 — Architecture / Art / Research" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-dark">
+<header class="site-header">
+  <div class="container navwrap">
+    <a class="brand" href="index.html">KIN<span class="one">1</span></a>
+    <nav class="nav">
+      <a href="about.html">about</a>
+      <a href="work.html">work</a>
+      <a href="sketch.html">sketch</a>
+      <a href="mail.html">mail</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+<section class="hero">
+  <h1>KIN1 — Architecture / Art / Research</h1>
+  <p class="kicker">Selected work, sketches, and notes on practice.</p>
+</section>
+<section class="grid">
+  <article class="card"><a href="work.html"><div class="frame" role="img" aria-label="Work grid placeholder"></div><h3>Work</h3></a><p>Buildings, interiors, objects.</p></article>
+  <article class="card"><a href="sketch.html"><div class="frame" role="img" aria-label="Sketch grid placeholder"></div><h3>Sketch</h3></a><p>Process, explorations, experiments.</p></article>
+</section>
+
+</main>
+<footer class="site-footer container">
+  <span>© <span id="year"></span> KIN1</span>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
