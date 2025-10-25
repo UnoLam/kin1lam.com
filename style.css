@@ -1,58 +1,203 @@
+:root {
+    --bg: #000000;
+    --rail: #000000;
+    --fg: #f0f0f0;
+    --pink: #BF6396;
+    --pink2: #D98FB1;
+    --border: #000000;
+    --rail-w: 1080px;
+    --left-w: 260px;
+    --gap: 20px;
+    --row: 8px;
 
-:root{
-  --bg:#121212; --rail:#0f0f0f; --fg:#f0f0f0;
-  --pink:#BF6396; --pink2:#D98FB1; --border:#1b1b1b;
-  --rail-w:1080px; --left-w:260px; --gap:20px;
-  --row:8px; /* grid row size for desktop composition */
+    /* grid row size for desktop composition */
 }
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{background:var(--bg);color:var(--fg);
-  font-family:"Lucida Sans","Lucida Grande","Lucida Sans Unicode",Arial,sans-serif;
-  line-height:1.55}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Lucida Sans","Lucida Grande","Lucida Sans Unicode",Arial,sans-serif;
+    line-height: 1.55;
+}
+
 /* header */
-.navwrap{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;
-  padding:8px 14px;border-bottom:1px solid var(--border);
-  background:rgba(18,18,18,.85);backdrop-filter:blur(6px);z-index:50}
-.brand{color:var(--pink);text-decoration:underline;font-size:24px;font-weight:400}
-.nav a{color:var(--pink2);text-decoration:underline;margin-left:16px;font-size:14px}
-.nav a.active,.nav a:hover{color:var(--fg)}
+.navwrap {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(18,18,18,.85);
+    backdrop-filter: blur(6px);
+    z-index: 50;
+}
+
+.brand {
+    color: var(--pink);
+    text-decoration: underline;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.nav a {
+    color: var(--pink2);
+    text-decoration: underline;
+    margin-left: 16px;
+    font-size: 14px;
+}
+
+.nav a.active,
+.nav a:hover {
+    color: var(--fg);
+}
+
 /* rail layout */
-.rail{width:var(--rail-w);margin:0 auto;background:var(--rail);padding:24px 24px 48px;
-  border-left:1px solid var(--border);border-right:1px solid var(--border)}
-.hero{width:var(--rail-w);margin:24px auto 0;padding:8px 24px;color:var(--pink2)}
-.entry{display:grid;grid-template-columns:var(--left-w) 1fr;gap:var(--gap);
-  margin:56px auto;max-width:var(--rail-w)}
-.copy{color:var(--pink);text-decoration:underline;font-size:13px;line-height:1.4}
-.copy h3{font-size:18px;margin:0 0 6px;font-weight:700;color:var(--pink)}
-.copy .year{display:block;margin-top:2px;color:var(--pink2)}
+.rail {
+    width: var(--rail-w);
+    margin: 0 auto;
+    background: var(--rail);
+    padding: 24px 24px 48px;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+}
+
+.hero {
+    width: var(--rail-w);
+    margin: 24px auto 0;
+    padding: 8px 24px;
+    color: var(--pink2);
+}
+
+.entry {
+    display: grid;
+    grid-template-columns: var(--left-w) 1fr;
+    gap: var(--gap);
+    margin: 56px auto;
+    max-width: var(--rail-w);
+}
+
+.copy {
+    color: var(--pink);
+    text-decoration: underline;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.copy h3 {
+    font-size: 18px;
+    margin: 0 0 6px;
+    font-weight: 700;
+    color: var(--pink);
+}
+
+.copy .year {
+    display: block;
+    margin-top: 2px;
+    color: var(--pink2);
+}
+
 /* media layout */
-.media{display:grid;gap:var(--gap)}
+.media {
+    display: grid;
+    gap: var(--gap);
+}
+
 /* mobile first: simple stacked aspect-ratio boxes */
-.figure{position:relative;width:100%;border:1px solid var(--border);background:#0d0d0d}
-.figure .img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ratio-wide{aspect-ratio:16/9} .ratio-square{aspect-ratio:1/1} .ratio-tall{aspect-ratio:3/4}
+.figure {
+    position: relative;
+    width: 100%;
+    border: 1px solid var(--border);
+    background: #0d0d0d;
+}
+
+.figure .img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ratio-wide {
+    aspect-ratio: 16/9;
+}
+
+.ratio-square {
+    aspect-ratio: 1/1;
+}
+
+.ratio-tall {
+    aspect-ratio: 3/4;
+}
+
 /* desktop: compositional grid with fine control */
 @media (min-width:1040px){
-  .media.desktop-grid{
-    display:grid;
-    grid-template-columns:repeat(12,1fr);
-    grid-auto-rows: var(--row);
-    position:relative;
-  }
-  .item{
-    position:relative;
-    grid-column: var(--c,1) / span var(--w,12);
-    grid-row: var(--r,1) / span var(--h,40);
-    border:1px solid var(--border);
-    background:#0d0d0d;
-    overflow:hidden;
-  }
-  .item .img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .rot90{transform:rotate(90deg); transform-origin:center; }
-  .rot180{transform:rotate(180deg); transform-origin:center; }
-  .lift-10{transform: translateY(-10px);} .lift-20{transform: translateY(-20px);}
-  .push-10{transform: translateX(10px);} .pull-10{transform: translateX(-10px);}
+    .media.desktop-grid {
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+        grid-auto-rows: var(--row);
+        position: relative;
+    }
+
+    .item {
+        position: relative;
+        border: 1px solid var(--border);
+        background: #000000;
+        overflow: hidden;
+        grid-area: 1 / 1 / 27 / 1;
+    }
+
+    .item .img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .rot90 {
+        transform: rotate(90deg);
+        transform-origin: center;
+    }
+
+    .rot180 {
+        transform: rotate(180deg);
+        transform-origin: center;
+    }
+
+    .lift-10 {
+        transform: translateY(-10px);
+    }
+
+    .lift-20 {
+        transform: translateY(-20px);
+    }
+
+    .push-10 {
+        transform: translateX(10px);
+    }
+
+    .pull-10 {
+        transform: translateX(-10px);
+    }
 }
+
 /* footer */
-footer.site-footer{color:#9a9a9a;border-top:1px solid var(--border);padding:20px 0;margin-top:40px}
+footer.site-footer {
+    color: #9a9a9a;
+    border-top: 1px solid var(--border);
+    padding: 20px 0;
+    margin-top: 0px;
+}
