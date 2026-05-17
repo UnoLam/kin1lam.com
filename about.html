@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>About — KIN1</title>
+        <meta name="description" content="KIN1 — Architecture / Art / Research"/>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+
+    <body>
+        <header class="site-header">
+            <div class="navwrap">
+                <a class="brand" href="home.html">
+                <img src="assets/1.svg" class="logo-default" alt="home">
+                <img src="assets/-.svg" class="logo-hover" alt="home">
+                </a>
+                <div class="menu-btn">☰</div>
+                <nav class="nav">
+                    <a href="about.html" class="active">about</a>
+                    <a href="work.html">work</a>
+                    <a href="sketch.html">sketch</a>
+                    <a href="mail.html">mail</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+           <section class="hero">About</section>
+            <div class="rail">
+                 <div class="about">
+                        <img src = "assets/him.png">
+                        <span class="year">Uno Lam | Architect</span>
+                        <p>ARB/RIBA Part 1, 2 & 3 MArch, AAdip</p>
+                        <p>Architectural Association School of Architecture</p>
+                        
+                        <br>
+                        <p>Uno Lam is an architect and mentor currently practicing in Hong Kong 
+                           following an extensive career and education in London.</p>
+                        <p>This digital archive documents a selection of private works spanning his time 
+                            in London and his current transition to Hong Kong. </p>
+                        
+                    </div>
+            </div>
+        </main>
+
+        <footer>
+            © KIN 1 WORKS LIMITED
+        </footer>
+        <script>
+  document.querySelector(".menu-btn").onclick = function(){
+    document.querySelector(".nav").classList.toggle("show");
+  }
+  </script><script>
+      document.addEventListener('contextmenu', function(e) {
+        if (e.target.tagName === 'IMG') {
+          e.preventDefault();
+        }
+      });
+    </script>
+    </body>
+</html>
+
+
+
