@@ -1,5 +1,4 @@
-
-<CTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8"/>
@@ -32,7 +31,7 @@
                         <h3>Contact</h3>
                         <span class="year">—</span>
                         <p>Email: <a href="mailto:unolamwork@gmail.com">unolamwork@gmail.com</a><br>
-      Instagram: <a href="https://instagram.com/kin1works" target="_blank" rel="noreferrer">@kin1works</a></p>
+                        Instagram: <a href="https://instagram.com/kin1works" target="_blank" rel="noreferrer">@kin1works</a></p>
                     </div>
                     <div class="media"></div>
                 </div>
@@ -41,9 +40,18 @@
         <footer class="site-footer">
             <div class="rail">© KIN 1 WORKS LIMITED</div>
         </footer>
+
         <script>
-  document.querySelector(".menu-btn").onclick = function(){
-    document.querySelector(".nav").classList.toggle("show");
-  }
- 
-</html> 
+            document.querySelector(".menu-btn").onclick = function(){
+                document.querySelector(".nav").classList.toggle("show");
+            }
+            
+            // Keeps images protected like your other pages
+            document.addEventListener('contextmenu', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+        </script>
+    </body>
+</html>
