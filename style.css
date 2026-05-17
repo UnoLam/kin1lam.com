@@ -538,6 +538,16 @@ footer{
   .hi2,
   .hi3 {
     margin-bottom: 20px;
-  }
+  }img {
+    /* Disables the pop-up menu when long-pressing an image on iOS/Safari */
+    -webkit-touch-callout: none;
+    
+    /* Prevents the user from selecting the image like text */
+    -webkit-user-select: none;
+    user-select: none;
+    
+    /* Disables the default tap highlight behavior on mobile */
+    -webkit-tap-highlight-color: transparent;
+}
 }
 
