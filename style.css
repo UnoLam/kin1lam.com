@@ -421,7 +421,21 @@ footer{
 
 /* small screen */
 @media (max-width: 768px) {
-  :root {
+.img-frame img{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+  }
+  .floor img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+    margin-top:0;
+}
+.AGRO2{
+    padding-left: 0;
+    width: 100%;
+}  :root {
     --page-pad: 16px;
   }
 
